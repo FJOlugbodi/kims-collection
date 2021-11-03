@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Batch" representedClassName="Batch" syncable="YES" codeGenerationType="class">
+        <attribute name="collaborator" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="numberGroups" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="numberSamples" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="groupArray" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Group" inverseName="batch" inverseEntity="Group"/>
+        <relationship name="sampleArray" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Sample" inverseName="batch" inverseEntity="Sample"/>
+    </entity>
+    <entity name="Group" representedClassName="Group" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="numberSamples" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="batch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Batch" inverseName="groupArray" inverseEntity="Batch"/>
+        <relationship name="sampleArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sample" inverseName="group" inverseEntity="Sample"/>
+    </entity>
+    <entity name="Sample" representedClassName="Sample" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="nickname" optional="YES" attributeType="String"/>
+        <attribute name="species" optional="YES" attributeType="String"/>
+        <relationship name="batch" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Batch" inverseName="sampleArray" inverseEntity="Batch"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Group" inverseName="sampleArray" inverseEntity="Group"/>
+    </entity>
+    <elements>
+        <element name="Batch" positionX="-356.70703125" positionY="-269.796875" width="128" height="134"/>
+        <element name="Group" positionX="79.01953125" positionY="-313.2109375" width="128" height="103"/>
+        <element name="Sample" positionX="-45.40625" positionY="-48.62109375" width="128" height="104"/>
+    </elements>
+</model>
