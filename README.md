@@ -36,4 +36,3 @@ Now, to achieve these views and to implement this logic, I did have to learn to 
 With knowledge of Core Data, and the help of God and the Kim Lab, and family, I was able to make a functioning design that I plan to persist in the future.
 I would also like to acknowledge NHGRI for its sponsorship, the NIH, Dr. Kim, Dr. Fisher and Dr. Nordgren, as well as the Kim Lab as a whole for their suppose and guidance!
 
-![image](https://user-images.githubusercontent.com/68043966/140010986-cde658b0-d695-45d8-8b82-83933b630ad9.png)
